@@ -26,6 +26,7 @@
 		8EFF8CF3279AABF200956FA1 /* TimelineContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF8CF2279AABF200956FA1 /* TimelineContentView.swift */; };
 		8EFF8CF5279ABC4A00956FA1 /* TimelineContentItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF8CF4279ABC4A00956FA1 /* TimelineContentItemView.swift */; };
 		8EFF8CF7279ABD0300956FA1 /* TimelinkContentLikeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFF8CF6279ABD0300956FA1 /* TimelinkContentLikeView.swift */; };
+		C161BA0F27FDD7EE00EA1400 /* FetchedTimelineContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C161BA0E27FDD7EE00EA1400 /* FetchedTimelineContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		8EFF8CF2279AABF200956FA1 /* TimelineContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineContentView.swift; sourceTree = "<group>"; };
 		8EFF8CF4279ABC4A00956FA1 /* TimelineContentItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelineContentItemView.swift; sourceTree = "<group>"; };
 		8EFF8CF6279ABD0300956FA1 /* TimelinkContentLikeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimelinkContentLikeView.swift; sourceTree = "<group>"; };
+		C161BA0E27FDD7EE00EA1400 /* FetchedTimelineContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedTimelineContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				8EB3F90E27B269B800E12C14 /* TimelineContent.swift */,
+				C161BA0E27FDD7EE00EA1400 /* FetchedTimelineContent.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				8EB3F91227B26EB900E12C14 /* TimelineContentItemView+ViewModel.swift in Sources */,
 				8E2C791527B27E6E00EFB9ED /* ProfileAvatarModificationView.swift in Sources */,
 				8EE3807C279A8BB200A19AE4 /* TimelineView.swift in Sources */,
+				C161BA0F27FDD7EE00EA1400 /* FetchedTimelineContent.swift in Sources */,
 				8EB3F90F27B269B800E12C14 /* TimelineContent.swift in Sources */,
 				8EFF8CF1279AAB3A00956FA1 /* TimelineHeaderView.swift in Sources */,
 				8EB3F90D27B2682300E12C14 /* TimelineContentView+ViewModel.swift in Sources */,
