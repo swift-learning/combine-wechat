@@ -14,10 +14,13 @@ struct ProfileAvatarModificationView: View {
     var body: some View {
         VStack {
             Spacer()
-            Image(loginedModel.profile.avatarUrl)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(alignment: .center)
+            AsyncImage(url: URL(string: loginedModel.profile.avatarUrl)) { image in
+                image.resizable()
+            } placeholder: {
+                Color.white
+            }
+            .aspectRatio(contentMode: .fit)
+            .frame(alignment: .center)
             Spacer()
         }
         .navigationTitle("个人")
@@ -32,7 +35,7 @@ struct ProfileAvatarModificationView: View {
                     loginedModel.updateLoginedAvatarUrl(url: "timeline_profile_image_zhu")
                 }, .cancel()])
             }
-
+            
         }
     }
 }

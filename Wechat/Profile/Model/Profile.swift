@@ -7,8 +7,16 @@
 
 import Foundation
 
-struct Profile {
-    let nickname: String
-    let avatarUrl: String
-    let backgroundUrl: String
+struct Profile: Codable {
+    var nickname: String
+    var avatarUrl: String
+    var backgroundUrl: String
+    var username: String
+    
+    public enum CodingKeys: String, CodingKey {
+        case backgroundUrl = "profile-image"
+        case avatarUrl = "avatar"
+        case nickname = "nick"
+        case username
+    }
 }

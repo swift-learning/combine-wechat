@@ -9,12 +9,15 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     @EnvironmentObject private var loginedModel: LoginedModelFromHomeView
-
+    
     var body: some View {
         HStack(alignment: .top) {
-            Image(loginedModel.profile.avatarUrl)
-                .resizable()
-                .frame(width: 60, height: 60)
+            AsyncImage(url: URL(string: loginedModel.profile.avatarUrl)) { image in
+                image.resizable()
+            } placeholder: {
+                Color.white
+            }
+            .frame(width: 60, height: 80)
             Text(loginedModel.profile.nickname)
                 .padding(EdgeInsets(top: 4, leading: 4, bottom: 0, trailing: 4))
             Spacer()
