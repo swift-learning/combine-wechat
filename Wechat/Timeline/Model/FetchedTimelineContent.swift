@@ -43,7 +43,7 @@ struct FetchedTimelineContent: Codable {
     
     public func mapToTimelineContent() -> TimelineContent? {
         var pharsed: TimelineContent? = nil
-        if self.error != nil && self.unknownError != nil {
+        if self.error == nil || self.unknownError == nil {
             var likes: [String] = []
             if comments != nil {
                 comments?.forEach { comment in

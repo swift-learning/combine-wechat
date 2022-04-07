@@ -11,6 +11,7 @@ import Combine
 
 enum WeChatError: Error {
     case fetchprofileError
+    case fetchTweetsError
 }
 
 @MainActor final class LoginedModelFromHomeView: ObservableObject {

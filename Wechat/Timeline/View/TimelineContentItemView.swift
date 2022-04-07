@@ -16,19 +16,25 @@ struct TimelineContentItemView: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            Image(viewModel.profileImageName)
-                .resizable()
-                .frame(width: 50, height: 50)
+            AsyncImage(url: URL(string: viewModel.profileImageName)) { image in
+                image.resizable()
+            } placeholder: {
+                Color.white
+            }
+            .frame(width: 50, height: 50)
             VStack(alignment: .leading, spacing: 10) {
                 Text(viewModel.profileNick)
                     .bold()
                 Text(viewModel.content)
                     .fontWeight(.light)
                 if viewModel.showSinglePhotoName {
-                    Image(viewModel.singlePhotoName)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(maxWidth: 200)
+                    AsyncImage(url: URL(string: viewModel.singlePhotoName)) { image in
+                                        image.resizable()
+                                    } placeholder: {
+                                        Color.white
+                                    }
+                                    .scaledToFit()
+                                    .frame(maxWidth: 200)
                 }
                 if viewModel.showLikes {
                     TimelinkContentLikeView(likes: viewModel.likes)
