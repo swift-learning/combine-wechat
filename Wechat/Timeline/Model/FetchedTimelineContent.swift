@@ -45,21 +45,16 @@ struct FetchedTimelineContent: Codable {
         var pharsed: TimelineContent? = nil
         if self.error == nil || self.unknownError == nil {
             var likes: [String] = []
-            if comments != nil {
-                comments?.forEach { comment in
-                    likes.append(comment.sender.nick)
-                }
+            comments?.forEach { comment in
+                likes.append(comment.sender.nick)
             }
+            let nickname = self.sender?.nick ?? ""
+            let avatarUrl = self.sender?.avatar ?? ""
+            let message = self.content ?? ""
             if images != nil {
-                let nickname = self.sender?.nick ?? ""
-                let avatarUrl = self.sender?.avatar ?? ""
                 let photo = self.images?.first?.url ?? ""
-                let message = self.content ?? ""
                 pharsed = TimelineContent(id: id, nickname: nickname, avatarUrl: avatarUrl, type: .singlePhoto(photo: photo, message: message), likes: likes)
             } else if content != nil {
-                let nickname = self.sender?.nick ?? ""
-                let avatarUrl = self.sender?.avatar ?? ""
-                let message = self.content ?? ""
                 pharsed = TimelineContent(id: id, nickname: nickname, avatarUrl: avatarUrl, type: .singleMessage(message: message), likes: likes)
             }
         }
