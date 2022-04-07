@@ -9,11 +9,6 @@ import Foundation
 import SwiftUI
 import Combine
 
-enum WeChatError: Error {
-    case fetchprofileError
-    case fetchTweetsError
-}
-
 @MainActor final class LoginedModelFromHomeView: ObservableObject {
     @Published private(set) var profile: Profile
     private var subscriptions: Set<AnyCancellable> = .init()
